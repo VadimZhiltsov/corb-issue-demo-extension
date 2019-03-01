@@ -1,0 +1,26 @@
+{
+  "name": "Test chrome CORB issue",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "This script demonstrates an wrong Cross-Origin Response Blocking",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": [
+    "https://localhost:3000/*",
+    "https://mail.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "scripts/contentscript.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ]
+}
